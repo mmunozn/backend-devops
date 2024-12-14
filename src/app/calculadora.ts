@@ -6,13 +6,16 @@ function operar(operacion: string = "", a: number, b: number) {
     }
 }
 
-function suma(a: number, b: number) {
+function suma(a: number, b: number) { //a = 1 , b=2
+
     if (a === undefined || b === undefined) {
         throw new Error("No se puede sumar indefinidos");
     }
+
     if (typeof a !== 'number' || typeof b !== 'number') {
         return NaN;
     }
+
     return a + b;
 }
 
