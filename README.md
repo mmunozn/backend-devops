@@ -14,7 +14,7 @@ Para construir el proyecto y dejar los ficheros finales en la carpeta __/dist__
 
 Para ejecutar los test es con
 
-    npm run test
+    npm run test moises
 ## Lista de endpoints
 
 * http://localhost:3000/
