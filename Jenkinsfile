@@ -1,14 +1,14 @@
 pipeline {
     agent any  
     stages{
-       stage("build"){
+       stage("instalar dependencias"){
            steps{
-               echo 'Hola mundo'
+               sh 'npm install'
            }
        }
-       stage("segundo build"){
+       stage("build  -  build del proyecto"){
            steps{
-               echo 'Hola mundo 2'
+                sh 'npm run build'
            }
        }
     }
