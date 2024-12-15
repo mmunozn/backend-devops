@@ -6,7 +6,7 @@ pipeline {
                sh 'npm install'
            }
        }
-       stage("build  -  build del proyecto"){
+       stage("build  -  build del proyecto-Moise"){
            steps{
                 sh 'npm run build'
            }
