@@ -1,16 +1,29 @@
 pipeline {
     agent any  
     stages{
+
        stage("instalar dependencias"){
-           steps{
-               sh 'npm install'
-           }
-       }
-       stage("build  -  build del proyecto-Moise"){
-           steps{
-                sh 'npm run build'
-           }
-       }
+            agent {
+                docker {
+                    label 'contenedores'
+                    image 'node:22-alpine'
+                    reuseNode true
+                }
+            }
+            stages{
+                stage("instalar dependencias - npm install"){
+                    steps{
+                        sh 'npm install'
+                    }
+                }
+                stage("build  -  build del proyecto-Moise"){
+                    steps{
+                        sh 'npm run build'
+                    }
+                }
+            }         
+       }     
+
     }
 }
 
