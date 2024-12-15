@@ -1,13 +1,12 @@
 pipeline {
     agent any  
     stages{
-
-       stage("instalar dependencias"){
-            agent {
-                docker {
-                    label 'contenedores'
+       stage("build - instalacion dependencias"){
+           agent {
+                docker {                   
                     image 'node:22-alpine'
                     reuseNode true
+                    label 'contenedores'
                 }
             }
             stages{
@@ -22,8 +21,7 @@ pipeline {
                     }
                 }
             }         
-       }     
-
+       }
     }
 }
 
