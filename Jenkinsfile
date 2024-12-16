@@ -30,6 +30,13 @@ pipeline {
                 }
             }         
        }
+       stage("delivery - subida a nexus"){
+           steps{
+                sh 'docker build -t backend-devops .'
+                sh 'docker tag backend-devops:latest localhost:8082/backend-devops:latest'
+                sh 'docker push localhost:8082/backend-devops:latest'
+           } 
+       }
     }
 }
 
